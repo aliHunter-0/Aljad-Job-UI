@@ -1,52 +1,47 @@
 import { useRouter } from 'next/dist/client/router';
-import JobCard from '../components/Card/JobCard';
-import Navbar from '../components/Navbar';
+import JobCard from '../../components/Card/JobCard';
+import Navbar from '../../components/Navbar';
 
 const JOBS_DUMMY = [
 	{
 		title: 'Flutter Dev',
 		description: 'test etstetete tetstetetstsstettetste',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 1,
 	},
 	{
 		title: 'Nodejs Dev',
 		description: 'test etstetete tetstetetstsstettetste',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 2,
 	},
 	{
 		title: 'Reactjs Dev',
 		description:
 			'test etstetete tetstetetstsstettetste test etstetete tetstetetstsstettetste ',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 3,
 	},
 	{
 		title: 'Full-Stack Dev',
 		description: 'test etstetete tetstetetstsstettetste ',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 4,
 	},
 ];
 
-export default function Home() {
+const MyApplications = ({ jobId = 1 }) => {
 	const router = useRouter();
-
-	const jobDetails = () => {
-		router.push('./jobdetails');
+	const jobStatus = () => {
+		router.push(`/myapplications/${jobId}`);
 	};
 	return (
 		<>
 			{/* Navbar Section */}
-			<Navbar />
+			<Navbar routeTo='/' routeName='Home' />
 
 			<section className='container'>
-				<h1 className='py-5'>Available Jobs</h1>
+				<h1 className='py-5'>My Applications</h1>
 				<div className='row gy-5'>
 					{JOBS_DUMMY.map((job, i) => {
 						return (
-							<div onClick={jobDetails} key={i} className='col-12 col-lg-4'>
+							<div onClick={jobStatus} key={i} className='col-12 col-lg-4'>
 								<JobCard jobData={job} />
 							</div>
 						);
@@ -55,4 +50,6 @@ export default function Home() {
 			</section>
 		</>
 	);
-}
+};
+
+export default MyApplications;
