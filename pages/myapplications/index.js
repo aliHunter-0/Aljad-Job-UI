@@ -34,7 +34,7 @@ const MyApplications = ({ jobId = 1 }) => {
 	return (
 		<>
 			{/* Navbar Section */}
-			<Navbar routeTo='/' routeName='Home' />
+			<Navbar inThisPage={true} />
 
 			<section className='container'>
 				<h1 className='py-5'>My Applications</h1>

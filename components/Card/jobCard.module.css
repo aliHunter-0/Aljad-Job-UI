@@ -1,19 +1,21 @@
 .myCard {
 	background-color: white;
 	border: none;
+	border-top: 2px solid #0dcaf0;
+
 	cursor: pointer;
 	box-shadow: 0 3px 5px rgba(0 0 0 /20%);
 	letter-spacing: 1px;
 	max-width: 25rem;
-	min-height: 17rem;
-
-	transition: 0.4s;
+	min-height: 20rem;
+	transition: 0.3s;
 }
 
 .myCard:hover {
 	background-color: rgb(243, 243, 243);
-	transform: scale(1.1);
+	transform: scale(1.08);
 	box-shadow: 0 1px 1px rgba(0 0 0 /20%);
+	border-top: 2px solid #08d6ff;
 }
 
 .cardTitle {
@@ -23,6 +25,7 @@
 .tags {
 	font-size: 14px;
 	min-width: 5rem;
+	margin-left: 0 !important;
 }
 
 .tags:hover {

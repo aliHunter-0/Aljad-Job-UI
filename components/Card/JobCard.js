@@ -12,11 +12,11 @@ const JobCard = ({ jobData }) => {
 				</h3>
 				<p className='text-center fw-light pt-3'>{jobData.description}</p>
 
-				<div className='d-flex justify-content-evenly'>
+				<div className='d-flex flex-wrap'>
 					{jobData?.tags?.map((item, i) => {
 						return (
 							<Link key={i} href='./myapplications' passHref>
-								<span className={`badge btn bg-info p-2 ${classes.tags}`}>
+								<span className={`badge btn bg-info p-2 m-2 ${classes.tags}`}>
 									{item}
 								</span>
 							</Link>

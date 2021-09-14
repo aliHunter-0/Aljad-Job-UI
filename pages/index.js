@@ -6,35 +6,35 @@ const JOBS_DUMMY = [
 	{
 		title: 'Flutter Dev',
 		description: 'test etstetete tetstetetstsstettetste',
-		tags: ['mobile', 'beginner', 'getx'],
-		id: 1,
+		tags: ['mobile', 'beginner', 'getx', 'test'],
+		id: '1',
 	},
 	{
 		title: 'Nodejs Dev',
 		description: 'test etstetete tetstetetstsstettetste',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 2,
+		id: '2',
 	},
 	{
 		title: 'Reactjs Dev',
 		description:
 			'test etstetete tetstetetstsstettetste test etstetete tetstetetstsstettetste ',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 3,
+		id: '3',
 	},
 	{
 		title: 'Full-Stack Dev',
 		description: 'test etstetete tetstetetstsstettetste ',
 		tags: ['mobile', 'beginner', 'getx'],
-		id: 4,
+		id: '4',
 	},
 ];
 
 export default function Home() {
 	const router = useRouter();
 
-	const jobDetails = () => {
-		router.push('./jobdetails');
+	const jobDetails = (job) => {
+		router.push(`./${job.id}`);
 	};
 	return (
 		<>
@@ -46,7 +46,10 @@ export default function Home() {
 				<div className='row gy-5'>
 					{JOBS_DUMMY.map((job, i) => {
 						return (
-							<div onClick={jobDetails} key={i} className='col-12 col-lg-4'>
+							<div
+								onClick={jobDetails.bind(null, job)}
+								key={i}
+								className='col-12 col-lg-4'>
 								<JobCard jobData={job} />
 							</div>
 						);
