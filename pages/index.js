@@ -1,6 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import JobCard from '../components/Card/JobCard';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
+import UserData from '../components/UserData/UserData';
 
 const JOBS_DUMMY = [
 	{
@@ -38,8 +39,7 @@ export default function Home() {
 	};
 	return (
 		<>
-			{/* Navbar Section */}
-			<Navbar />
+			{/* <Navbar />
 
 			<section className='container'>
 				<h1 className='py-5'>Available Jobs</h1>
@@ -55,7 +55,8 @@ export default function Home() {
 						);
 					})}
 				</div>
-			</section>
+			</section> */}
+			<UserData />
 		</>
 	);
 }

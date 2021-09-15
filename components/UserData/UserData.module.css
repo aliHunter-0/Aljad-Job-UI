@@ -1,0 +1,28 @@
+.personalInfo {
+	min-height: 80vh;
+}
+
+.infosHeaders {
+	border-bottom: 1px solid #21252938;
+}
+
+.expInfo {
+	border: 1px solid #00000029;
+}
+
+.noteCard {
+	color: white;
+	overflow-wrap: break-word;
+	padding: 2rem 1rem;
+	border-radius: 10px;
+	border-top-left-radius: 0;
+	position: relative;
+}
+
+.deleteIcon {
+	color: red;
+	cursor: pointer;
+	position: absolute;
+	top: 0.5rem;
+	right: 1rem;
+}

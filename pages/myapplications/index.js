@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import JobCard from '../../components/Card/JobCard';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 
 const JOBS_DUMMY = [
 	{
@@ -26,11 +26,7 @@ const JOBS_DUMMY = [
 	},
 ];
 
-const MyApplications = ({ jobId = 1 }) => {
-	const router = useRouter();
-	const jobStatus = () => {
-		router.push(`/myapplications/${jobId}`);
-	};
+const MyApplications = () => {
 	return (
 		<>
 			{/* Navbar Section */}
@@ -41,7 +37,7 @@ const MyApplications = ({ jobId = 1 }) => {
 				<div className='row gy-5'>
 					{JOBS_DUMMY.map((job, i) => {
 						return (
-							<div onClick={jobStatus} key={i} className='col-12 col-lg-4'>
+							<div key={i} className='col-12 col-lg-4'>
 								<JobCard jobData={job} />
 							</div>
 						);
